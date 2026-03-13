@@ -1,0 +1,481 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud KMS API
+  description: >-
+    The Cloud KMS API enables creating and managing cryptographic keys,
+    key rings, and crypto key versions, and performing encrypt, decrypt,
+    sign, and verify operations.
+  version: 1.0.0
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/kms
+servers:
+  - url: https://cloudkms.googleapis.com/v1
+    description: Google Cloud KMS Production
+paths:
+  /projects/{projectId}/locations/{location}/keyRings:
+    get:
+      operationId: listKeyRings
+      summary: List key rings
+      description: Lists key rings in a project and location.
+      tags:
+        - Key Rings
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  keyRings:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/KeyRing'
+                  nextPageToken:
+                    type: string
+    post:
+      operationId: createKeyRing
+      summary: Create a key ring
+      description: Creates a new key ring in a project and location.
+      tags:
+        - Key Rings
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: keyRingId
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KeyRing'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeyRing'
+  /projects/{projectId}/locations/{location}/keyRings/{keyRingId}:
+    get:
+      operationId: getKeyRing
+      summary: Get a key ring
+      description: Retrieves a specific key ring.
+      tags:
+        - Key Rings
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: keyRingId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeyRing'
+  /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys:
+    get:
+      operationId: listCryptoKeys
+      summary: List crypto keys
+      description: Lists crypto keys in a key ring.
+      tags:
+        - Crypto Keys
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: keyRingId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cryptoKeys:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CryptoKey'
+                  nextPageToken:
+                    type: string
+    post:
+      operationId: createCryptoKey
+      summary: Create a crypto key
+      description: Creates a new crypto key within a key ring.
+      tags:
+        - Crypto Keys
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: keyRingId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cryptoKeyId
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CryptoKey'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CryptoKey'
+  /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}:
+    get:
+      operationId: getCryptoKey
+      summary: Get a crypto key
+      description: Retrieves a specific crypto key.
+      tags:
+        - Crypto Keys
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: keyRingId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cryptoKeyId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CryptoKey'
+    patch:
+      operationId: updateCryptoKey
+      summary: Update a crypto key
+      description: Updates a crypto key.
+      tags:
+        - Crypto Keys
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: keyRingId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cryptoKeyId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CryptoKey'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CryptoKey'
+  /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}:encrypt:
+    post:
+      operationId: encrypt
+      summary: Encrypt data
+      description: Encrypts data using a crypto key.
+      tags:
+        - Crypto Operations
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: keyRingId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cryptoKeyId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                plaintext:
+                  type: string
+                  description: Base64-encoded plaintext to encrypt.
+                additionalAuthenticatedData:
+                  type: string
+                  description: Optional base64-encoded additional authenticated data.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  ciphertext:
+                    type: string
+  /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}:decrypt:
+    post:
+      operationId: decrypt
+      summary: Decrypt data
+      description: Decrypts data encrypted with a crypto key.
+      tags:
+        - Crypto Operations
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: keyRingId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cryptoKeyId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ciphertext:
+                  type: string
+                  description: Base64-encoded ciphertext to decrypt.
+                additionalAuthenticatedData:
+                  type: string
+                  description: Optional base64-encoded additional authenticated data.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  plaintext:
+                    type: string
+components:
+  schemas:
+    KeyRing:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Resource name of the key ring.
+        createTime:
+          type: string
+          format: date-time
+          description: Timestamp when the key ring was created.
+    CryptoKey:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Resource name of the crypto key.
+        primary:
+          $ref: '#/components/schemas/CryptoKeyVersion'
+        purpose:
+          type: string
+          enum:
+            - CRYPTO_KEY_PURPOSE_UNSPECIFIED
+            - ENCRYPT_DECRYPT
+            - ASYMMETRIC_SIGN
+            - ASYMMETRIC_DECRYPT
+            - MAC
+          description: Purpose of the crypto key.
+        createTime:
+          type: string
+          format: date-time
+          description: Timestamp when the key was created.
+        nextRotationTime:
+          type: string
+          format: date-time
+          description: Timestamp of the next scheduled rotation.
+        rotationPeriod:
+          type: string
+          description: Rotation period in seconds.
+        versionTemplate:
+          type: object
+          properties:
+            protectionLevel:
+              type: string
+              enum:
+                - PROTECTION_LEVEL_UNSPECIFIED
+                - SOFTWARE
+                - HSM
+                - EXTERNAL
+                - EXTERNAL_VPC
+            algorithm:
+              type: string
+        destroyScheduledDuration:
+          type: string
+          description: Duration before a key version is destroyed after scheduling.
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+    CryptoKeyVersion:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Resource name of the crypto key version.
+        state:
+          type: string
+          enum:
+            - CRYPTO_KEY_VERSION_STATE_UNSPECIFIED
+            - PENDING_GENERATION
+            - ENABLED
+            - DISABLED
+            - DESTROYED
+            - DESTROY_SCHEDULED
+            - PENDING_IMPORT
+            - IMPORT_FAILED
+        protectionLevel:
+          type: string
+          description: Protection level of the key version.
+        algorithm:
+          type: string
+          description: Algorithm of the key version.
+        createTime:
+          type: string
+          format: date-time
+        generateTime:
+          type: string
+          format: date-time
+        destroyTime:
+          type: string
+          format: date-time
+        destroyEventTime:
+          type: string
+          format: date-time
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloudkms: Manage KMS resources
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud

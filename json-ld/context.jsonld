@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gcloud": "https://cloud.google.com/kms/docs/reference/rest/v1/",
+    "KeyRing": "gcloud:projects.locations.keyRings",
+    "CryptoKey": "gcloud:projects.locations.keyRings.cryptoKeys",
+    "CryptoKeyVersion": "gcloud:projects.locations.keyRings.cryptoKeys.cryptoKeyVersions",
+    "name": "https://schema.org/name",
+    "description": "https://schema.org/description",
+    "createTime": "https://schema.org/dateCreated",
+    "purpose": "https://schema.org/purpose",
+    "state": "https://schema.org/status",
+    "algorithm": "https://schema.org/algorithm",
+    "protectionLevel": "https://schema.org/securityClearance",
+    "labels": "https://schema.org/keywords",
+    "nextRotationTime": "https://schema.org/scheduledTime",
+    "rotationPeriod": "https://schema.org/repeatFrequency"
+  }
+}

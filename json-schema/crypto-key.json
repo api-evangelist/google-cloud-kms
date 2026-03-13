@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/google-cloud-kms/refs/heads/main/json-schema/crypto-key.json",
+  "title": "CryptoKey",
+  "description": "A Google Cloud KMS cryptographic key resource used for encryption, decryption, signing, or verification operations.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Resource name of the crypto key."
+    },
+    "primary": {
+      "type": "object",
+      "description": "The primary version of the crypto key.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Resource name of the crypto key version."
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "CRYPTO_KEY_VERSION_STATE_UNSPECIFIED",
+            "PENDING_GENERATION",
+            "ENABLED",
+            "DISABLED",
+            "DESTROYED",
+            "DESTROY_SCHEDULED",
+            "PENDING_IMPORT",
+            "IMPORT_FAILED"
+          ],
+          "description": "Current state of the key version."
+        },
+        "protectionLevel": {
+          "type": "string",
+          "enum": ["PROTECTION_LEVEL_UNSPECIFIED", "SOFTWARE", "HSM", "EXTERNAL", "EXTERNAL_VPC"],
+          "description": "Protection level of the key version."
+        },
+        "algorithm": {
+          "type": "string",
+          "description": "Algorithm of the key version."
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the version was created."
+        },
+        "generateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the key material was generated."
+        }
+      }
+    },
+    "purpose": {
+      "type": "string",
+      "enum": [
+        "CRYPTO_KEY_PURPOSE_UNSPECIFIED",
+        "ENCRYPT_DECRYPT",
+        "ASYMMETRIC_SIGN",
+        "ASYMMETRIC_DECRYPT",
+        "MAC"
+      ],
+      "description": "Immutable purpose of the crypto key."
+    },
+    "createTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the key was created."
+    },
+    "nextRotationTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of the next scheduled key rotation."
+    },
+    "rotationPeriod": {
+      "type": "string",
+      "description": "Rotation period of the key in seconds format."
+    },
+    "versionTemplate": {
+      "type": "object",
+      "description": "Template describing settings for new crypto key versions.",
+      "properties": {
+        "protectionLevel": {
+          "type": "string",
+          "enum": ["PROTECTION_LEVEL_UNSPECIFIED", "SOFTWARE", "HSM", "EXTERNAL", "EXTERNAL_VPC"]
+        },
+        "algorithm": {
+          "type": "string"
+        }
+      }
+    },
+    "destroyScheduledDuration": {
+      "type": "string",
+      "description": "Duration before scheduled destruction completes."
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Labels applied to the crypto key."
+    },
+    "importOnly": {
+      "type": "boolean",
+      "description": "Whether this key may contain imported versions only."
+    }
+  },
+  "required": ["purpose"]
+}
