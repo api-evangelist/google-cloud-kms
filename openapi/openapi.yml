@@ -479,3 +479,7 @@ components:
           scopes:
             https://www.googleapis.com/auth/cloudkms: Manage KMS resources
             https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud
+tags:
+  - name: Crypto Keys
+  - name: Crypto Operations
+  - name: Key Rings

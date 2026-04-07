@@ -12,11 +12,11 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 type: Index
 tags:
-  - Google Cloud
-  - KMS
-  - Encryption
   - Cryptography
+  - Encryption
+  - Google Cloud
   - Key Management
+  - KMS
   - Security
 apis:
   - name: Google Cloud KMS API
@@ -27,10 +27,10 @@ apis:
     humanURL: https://cloud.google.com/kms
     baseURL: https://cloudkms.googleapis.com
     tags:
-      - KMS
-      - Keys
-      - Encryption
       - Cryptography
+      - Encryption
+      - Keys
+      - KMS
     properties:
       - type: Documentation
         url: https://cloud.google.com/kms/docs/reference/rest
