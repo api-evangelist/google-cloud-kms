@@ -16,7 +16,7 @@ paths:
   /projects/{projectId}/locations/{location}/keyRings:
     get:
       operationId: listKeyRings
-      summary: List key rings
+      summary: Google Cloud KMS List key rings
       description: Lists key rings in a project and location.
       tags:
         - Key Rings
@@ -55,7 +55,7 @@ paths:
                     type: string
     post:
       operationId: createKeyRing
-      summary: Create a key ring
+      summary: Google Cloud KMS Create a key ring
       description: Creates a new key ring in a project and location.
       tags:
         - Key Rings
@@ -91,7 +91,7 @@ paths:
   /projects/{projectId}/locations/{location}/keyRings/{keyRingId}:
     get:
       operationId: getKeyRing
-      summary: Get a key ring
+      summary: Google Cloud KMS Get a key ring
       description: Retrieves a specific key ring.
       tags:
         - Key Rings
@@ -121,7 +121,7 @@ paths:
   /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys:
     get:
       operationId: listCryptoKeys
-      summary: List crypto keys
+      summary: Google Cloud KMS List crypto keys
       description: Lists crypto keys in a key ring.
       tags:
         - Crypto Keys
@@ -157,7 +157,7 @@ paths:
                     type: string
     post:
       operationId: createCryptoKey
-      summary: Create a crypto key
+      summary: Google Cloud KMS Create a crypto key
       description: Creates a new crypto key within a key ring.
       tags:
         - Crypto Keys
@@ -198,7 +198,7 @@ paths:
   /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}:
     get:
       operationId: getCryptoKey
-      summary: Get a crypto key
+      summary: Google Cloud KMS Get a crypto key
       description: Retrieves a specific crypto key.
       tags:
         - Crypto Keys
@@ -232,7 +232,7 @@ paths:
                 $ref: '#/components/schemas/CryptoKey'
     patch:
       operationId: updateCryptoKey
-      summary: Update a crypto key
+      summary: Google Cloud KMS Update a crypto key
       description: Updates a crypto key.
       tags:
         - Crypto Keys
@@ -273,7 +273,7 @@ paths:
   /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}:encrypt:
     post:
       operationId: encrypt
-      summary: Encrypt data
+      summary: Google Cloud KMS Encrypt data
       description: Encrypts data using a crypto key.
       tags:
         - Crypto Operations
@@ -326,7 +326,7 @@ paths:
   /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}:decrypt:
     post:
       operationId: decrypt
-      summary: Decrypt data
+      summary: Google Cloud KMS Decrypt data
       description: Decrypts data encrypted with a crypto key.
       tags:
         - Crypto Operations
