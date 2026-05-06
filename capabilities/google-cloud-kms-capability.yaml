@@ -1,0 +1,666 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud KMS API
+  description: The Cloud KMS API enables creating and managing cryptographic keys, key rings, and crypto key versions, and
+    performing encrypt, decrypt, sign, and verify operations.
+  tags:
+  - Google
+  - Cloud
+  - Kms
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-cloud-kms
+    baseUri: https://cloudkms.googleapis.com/v1
+    description: Google Cloud KMS API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{GOOGLE_CLOUD_KMS_TOKEN}}'
+    resources:
+    - name: projects-projectid-locations-location-keyrings
+      path: /projects/{projectId}/locations/{location}/keyRings
+      operations:
+      - name: listkeyrings
+        method: GET
+        description: Google Cloud KMS List key rings
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createkeyring
+        method: POST
+        description: Google Cloud KMS Create a key ring
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: keyRingId
+          in: query
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-keyrings-k
+      path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}
+      operations:
+      - name: getkeyring
+        method: GET
+        description: Google Cloud KMS Get a key ring
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: keyRingId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-keyrings-k
+      path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys
+      operations:
+      - name: listcryptokeys
+        method: GET
+        description: Google Cloud KMS List crypto keys
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: keyRingId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcryptokey
+        method: POST
+        description: Google Cloud KMS Create a crypto key
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: keyRingId
+          in: path
+          type: string
+          required: true
+        - name: cryptoKeyId
+          in: query
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-keyrings-k
+      path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}
+      operations:
+      - name: getcryptokey
+        method: GET
+        description: Google Cloud KMS Get a crypto key
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: keyRingId
+          in: path
+          type: string
+          required: true
+        - name: cryptoKeyId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updatecryptokey
+        method: PATCH
+        description: Google Cloud KMS Update a crypto key
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: keyRingId
+          in: path
+          type: string
+          required: true
+        - name: cryptoKeyId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-keyrings-k
+      path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}:encrypt
+      operations:
+      - name: encrypt
+        method: POST
+        description: Google Cloud KMS Encrypt data
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: keyRingId
+          in: path
+          type: string
+          required: true
+        - name: cryptoKeyId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-keyrings-k
+      path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}:decrypt
+      operations:
+      - name: decrypt
+        method: POST
+        description: Google Cloud KMS Decrypt data
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: keyRingId
+          in: path
+          type: string
+          required: true
+        - name: cryptoKeyId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-cloud-kms-rest
+    description: REST adapter for Google Cloud KMS API.
+    resources:
+    - path: /projects/{projectId}/locations/{location}/keyRings
+      name: listkeyrings
+      operations:
+      - method: GET
+        name: listkeyrings
+        description: Google Cloud KMS List key rings
+        call: google-cloud-kms.listkeyrings
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/keyRings
+      name: createkeyring
+      operations:
+      - method: POST
+        name: createkeyring
+        description: Google Cloud KMS Create a key ring
+        call: google-cloud-kms.createkeyring
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}
+      name: getkeyring
+      operations:
+      - method: GET
+        name: getkeyring
+        description: Google Cloud KMS Get a key ring
+        call: google-cloud-kms.getkeyring
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          keyRingId: rest.keyRingId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys
+      name: listcryptokeys
+      operations:
+      - method: GET
+        name: listcryptokeys
+        description: Google Cloud KMS List crypto keys
+        call: google-cloud-kms.listcryptokeys
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          keyRingId: rest.keyRingId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys
+      name: createcryptokey
+      operations:
+      - method: POST
+        name: createcryptokey
+        description: Google Cloud KMS Create a crypto key
+        call: google-cloud-kms.createcryptokey
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          keyRingId: rest.keyRingId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}
+      name: getcryptokey
+      operations:
+      - method: GET
+        name: getcryptokey
+        description: Google Cloud KMS Get a crypto key
+        call: google-cloud-kms.getcryptokey
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          keyRingId: rest.keyRingId
+          cryptoKeyId: rest.cryptoKeyId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}
+      name: updatecryptokey
+      operations:
+      - method: PATCH
+        name: updatecryptokey
+        description: Google Cloud KMS Update a crypto key
+        call: google-cloud-kms.updatecryptokey
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          keyRingId: rest.keyRingId
+          cryptoKeyId: rest.cryptoKeyId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}:encrypt
+      name: encrypt
+      operations:
+      - method: POST
+        name: encrypt
+        description: Google Cloud KMS Encrypt data
+        call: google-cloud-kms.encrypt
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          keyRingId: rest.keyRingId
+          cryptoKeyId: rest.cryptoKeyId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}:decrypt
+      name: decrypt
+      operations:
+      - method: POST
+        name: decrypt
+        description: Google Cloud KMS Decrypt data
+        call: google-cloud-kms.decrypt
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          keyRingId: rest.keyRingId
+          cryptoKeyId: rest.cryptoKeyId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-cloud-kms-mcp
+    transport: http
+    description: MCP adapter for Google Cloud KMS API for AI agent use.
+    tools:
+    - name: listkeyrings
+      description: Google Cloud KMS List key rings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-kms.listkeyrings
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createkeyring
+      description: Google Cloud KMS Create a key ring
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-kms.createkeyring
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        keyRingId: tools.keyRingId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: keyRingId
+        type: string
+        description: keyRingId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getkeyring
+      description: Google Cloud KMS Get a key ring
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-kms.getkeyring
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        keyRingId: tools.keyRingId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: keyRingId
+        type: string
+        description: keyRingId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listcryptokeys
+      description: Google Cloud KMS List crypto keys
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-kms.listcryptokeys
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        keyRingId: tools.keyRingId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: keyRingId
+        type: string
+        description: keyRingId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createcryptokey
+      description: Google Cloud KMS Create a crypto key
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-kms.createcryptokey
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        keyRingId: tools.keyRingId
+        cryptoKeyId: tools.cryptoKeyId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: keyRingId
+        type: string
+        description: keyRingId
+        required: true
+      - name: cryptoKeyId
+        type: string
+        description: cryptoKeyId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcryptokey
+      description: Google Cloud KMS Get a crypto key
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-kms.getcryptokey
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        keyRingId: tools.keyRingId
+        cryptoKeyId: tools.cryptoKeyId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: keyRingId
+        type: string
+        description: keyRingId
+        required: true
+      - name: cryptoKeyId
+        type: string
+        description: cryptoKeyId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updatecryptokey
+      description: Google Cloud KMS Update a crypto key
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-kms.updatecryptokey
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        keyRingId: tools.keyRingId
+        cryptoKeyId: tools.cryptoKeyId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: keyRingId
+        type: string
+        description: keyRingId
+        required: true
+      - name: cryptoKeyId
+        type: string
+        description: cryptoKeyId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: encrypt
+      description: Google Cloud KMS Encrypt data
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-kms.encrypt
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        keyRingId: tools.keyRingId
+        cryptoKeyId: tools.cryptoKeyId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: keyRingId
+        type: string
+        description: keyRingId
+        required: true
+      - name: cryptoKeyId
+        type: string
+        description: cryptoKeyId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: decrypt
+      description: Google Cloud KMS Decrypt data
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-kms.decrypt
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        keyRingId: tools.keyRingId
+        cryptoKeyId: tools.cryptoKeyId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: keyRingId
+        type: string
+        description: keyRingId
+        required: true
+      - name: cryptoKeyId
+        type: string
+        description: cryptoKeyId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_KMS_TOKEN: GOOGLE_CLOUD_KMS_TOKEN
