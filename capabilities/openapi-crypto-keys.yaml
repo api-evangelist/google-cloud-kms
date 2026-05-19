@@ -1,0 +1,268 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud KMS API — Crypto Keys
+  description: 'Google Cloud KMS API — Crypto Keys. 4 operations. Lead operation: Google Cloud KMS List crypto keys. Self-contained
+    Naftiko capability covering one Google Cloud Kms business surface.'
+  tags:
+  - Google Cloud Kms
+  - Crypto Keys
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_KMS_API_KEY: GOOGLE_CLOUD_KMS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-crypto-keys
+    baseUri: https://cloudkms.googleapis.com/v1
+    description: Google Cloud KMS API — Crypto Keys business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-projectId-locations-location-keyRings-keyRingId-cryptoKeys
+      path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys
+      operations:
+      - name: listcryptokeys
+        method: GET
+        description: Google Cloud KMS List crypto keys
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: keyRingId
+          in: path
+          type: string
+          required: true
+      - name: createcryptokey
+        method: POST
+        description: Google Cloud KMS Create a crypto key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: keyRingId
+          in: path
+          type: string
+          required: true
+        - name: cryptoKeyId
+          in: query
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects-projectId-locations-location-keyRings-keyRingId-cryptoKeys-cryptoKeyId
+      path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}
+      operations:
+      - name: getcryptokey
+        method: GET
+        description: Google Cloud KMS Get a crypto key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: keyRingId
+          in: path
+          type: string
+          required: true
+        - name: cryptoKeyId
+          in: path
+          type: string
+          required: true
+      - name: updatecryptokey
+        method: PATCH
+        description: Google Cloud KMS Update a crypto key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: keyRingId
+          in: path
+          type: string
+          required: true
+        - name: cryptoKeyId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_KMS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openapi-crypto-keys-rest
+    port: 8080
+    description: REST adapter for Google Cloud KMS API — Crypto Keys. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/projects/{projectid}/locations/{location}/keyrings/{keyringid}/cryptokeys
+      name: projects-projectid-locations-location-keyrings-keyringid-cryptokeys
+      description: REST surface for projects-projectId-locations-location-keyRings-keyRingId-cryptoKeys.
+      operations:
+      - method: GET
+        name: listcryptokeys
+        description: Google Cloud KMS List crypto keys
+        call: openapi-crypto-keys.listcryptokeys
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          keyRingId: rest.keyRingId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createcryptokey
+        description: Google Cloud KMS Create a crypto key
+        call: openapi-crypto-keys.createcryptokey
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          keyRingId: rest.keyRingId
+          cryptoKeyId: rest.cryptoKeyId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectid}/locations/{location}/keyrings/{keyringid}/cryptokeys/{cryptokeyid}
+      name: projects-projectid-locations-location-keyrings-keyringid-cryptokeys-cryptokeyid
+      description: REST surface for projects-projectId-locations-location-keyRings-keyRingId-cryptoKeys-cryptoKeyId.
+      operations:
+      - method: GET
+        name: getcryptokey
+        description: Google Cloud KMS Get a crypto key
+        call: openapi-crypto-keys.getcryptokey
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          keyRingId: rest.keyRingId
+          cryptoKeyId: rest.cryptoKeyId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updatecryptokey
+        description: Google Cloud KMS Update a crypto key
+        call: openapi-crypto-keys.updatecryptokey
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          keyRingId: rest.keyRingId
+          cryptoKeyId: rest.cryptoKeyId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-crypto-keys-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud KMS API — Crypto Keys. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: google-cloud-kms-list-crypto
+      description: Google Cloud KMS List crypto keys
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-crypto-keys.listcryptokeys
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        keyRingId: tools.keyRingId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-kms-create-crypto
+      description: Google Cloud KMS Create a crypto key
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-crypto-keys.createcryptokey
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        keyRingId: tools.keyRingId
+        cryptoKeyId: tools.cryptoKeyId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-kms-get-crypto
+      description: Google Cloud KMS Get a crypto key
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-crypto-keys.getcryptokey
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        keyRingId: tools.keyRingId
+        cryptoKeyId: tools.cryptoKeyId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-kms-update-crypto
+      description: Google Cloud KMS Update a crypto key
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: openapi-crypto-keys.updatecryptokey
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        keyRingId: tools.keyRingId
+        cryptoKeyId: tools.cryptoKeyId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
