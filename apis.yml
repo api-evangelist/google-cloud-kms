@@ -10,67 +10,69 @@ modified: '2026-05-19'
 specificationVersion: '0.19'
 type: Index
 tags:
-- Cryptography
-- Encryption
-- Google Cloud
-- Key Management
-- KMS
-- Security
-apis:
-- name: Google Cloud KMS API
-  description: The Cloud KMS API enables creating and managing cryptographic keys, key rings, and crypto key versions, and
-    performing encrypt, decrypt, sign, and verify operations.
-  humanURL: https://cloud.google.com/kms
-  baseURL: https://cloudkms.googleapis.com
-  tags:
   - Cryptography
   - Encryption
-  - Keys
+  - Google Cloud
+  - Key Management
   - KMS
-  properties:
-  - type: Documentation
-    url: https://cloud.google.com/kms/docs/reference/rest
-  - type: OpenAPI
-    url: openapi/openapi.yml
-  - type: Authentication
-    url: https://cloud.google.com/kms/docs/iam
+  - Security
+apis:
+  - name: Google Cloud KMS API
+    description: The Cloud KMS API enables creating and managing cryptographic keys, key rings, and crypto key versions, and
+      performing encrypt, decrypt, sign, and verify operations.
+    humanURL: https://cloud.google.com/kms
+    baseURL: https://cloudkms.googleapis.com
+    tags:
+    - Cryptography
+    - Encryption
+    - Keys
+    - KMS
+    properties:
+    - type: Documentation
+      url: https://cloud.google.com/kms/docs/reference/rest
+    - type: OpenAPI
+      url: openapi/openapi.yml
+    - type: Authentication
+      url: https://cloud.google.com/kms/docs/iam
+    - type: GettingStarted
+      url: https://cloud.google.com/kms/docs/quickstart
+    - type: JSONSchema
+      url: json-schema/crypto-key.json
+    - type: JSONLDContext
+      url: json-ld/context.jsonld
+    - type: NaftikoCapability
+      url: capabilities/openapi-crypto-keys.yaml
+    - type: NaftikoCapability
+      url: capabilities/openapi-crypto-operations.yaml
+    - type: NaftikoCapability
+      url: capabilities/openapi-key-rings.yaml
+common:
+  - type: GitHubOrganization
+    url: https://github.com/googleapis
+  - type: Portal
+    url: https://cloud.google.com/kms
   - type: GettingStarted
     url: https://cloud.google.com/kms/docs/quickstart
-  - type: JSONSchema
-    url: json-schema/crypto-key.json
+  - type: Documentation
+    url: https://cloud.google.com/kms/docs
+  - type: Authentication
+    url: https://cloud.google.com/kms/docs/iam
+  - type: Pricing
+    url: https://cloud.google.com/kms/pricing
+  - type: TermsOfService
+    url: https://cloud.google.com/terms
+  - type: PrivacyPolicy
+    url: https://policies.google.com/privacy
+  - type: StatusPage
+    url: https://status.cloud.google.com/
+  - type: Support
+    url: https://cloud.google.com/kms/docs/support
   - type: JSONLDContext
     url: json-ld/context.jsonld
-  - type: NaftikoCapability
-    url: capabilities/openapi-crypto-keys.yaml
-  - type: NaftikoCapability
-    url: capabilities/openapi-crypto-operations.yaml
-  - type: NaftikoCapability
-    url: capabilities/openapi-key-rings.yaml
-common:
-- type: Portal
-  url: https://cloud.google.com/kms
-- type: GettingStarted
-  url: https://cloud.google.com/kms/docs/quickstart
-- type: Documentation
-  url: https://cloud.google.com/kms/docs
-- type: Authentication
-  url: https://cloud.google.com/kms/docs/iam
-- type: Pricing
-  url: https://cloud.google.com/kms/pricing
-- type: TermsOfService
-  url: https://cloud.google.com/terms
-- type: PrivacyPolicy
-  url: https://policies.google.com/privacy
-- type: StatusPage
-  url: https://status.cloud.google.com/
-- type: Support
-  url: https://cloud.google.com/kms/docs/support
-- type: JSONLDContext
-  url: json-ld/context.jsonld
-- type: Integrations
-  url: https://cloud.google.com/marketplace
+  - type: Integrations
+    url: https://cloud.google.com/marketplace
 integrations:
-- name: Become a Partner
+  - name: Become a Partner
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
