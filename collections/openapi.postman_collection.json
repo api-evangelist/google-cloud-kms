@@ -1,0 +1,1345 @@
+{
+  "item": [
+    {
+      "id": "1fef1fa9-5b2d-464b-8fc7-0da28f5b2b44",
+      "name": "Crypto Keys",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "016bb665-83fa-4115-89e1-93c949a027ad",
+          "name": "Google Cloud KMS List crypto keys",
+          "request": {
+            "name": "Google Cloud KMS List crypto keys",
+            "description": {
+              "content": "Lists crypto keys in a key ring.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "keyRings",
+                ":keyRingId",
+                "cryptoKeys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "keyRingId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3c5062bd-1f7c-4e8c-a085-5100efb881ee",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "keyRings",
+                    ":keyRingId",
+                    "cryptoKeys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "keyRingId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"cryptoKeys\": [\n    {\n      \"name\": \"string\",\n      \"primary\": {\n        \"name\": \"string\",\n        \"state\": \"IMPORT_FAILED\",\n        \"protectionLevel\": \"string\",\n        \"algorithm\": \"string\",\n        \"createTime\": \"1954-01-02T20:59:18.665Z\",\n        \"generateTime\": \"2018-05-26T20:22:15.860Z\",\n        \"destroyTime\": \"2013-06-29T15:53:16.442Z\",\n        \"destroyEventTime\": \"2004-08-11T19:24:23.432Z\"\n      },\n      \"purpose\": \"ENCRYPT_DECRYPT\",\n      \"createTime\": \"1951-08-12T08:38:27.874Z\",\n      \"nextRotationTime\": \"2010-01-10T22:38:06.642Z\",\n      \"rotationPeriod\": \"string\",\n      \"versionTemplate\": {\n        \"protectionLevel\": \"EXTERNAL_VPC\",\n        \"algorithm\": \"string\"\n      },\n      \"destroyScheduledDuration\": \"string\",\n      \"labels\": {\n        \"key_0\": \"string\"\n      }\n    },\n    {\n      \"name\": \"string\",\n      \"primary\": {\n        \"name\": \"string\",\n        \"state\": \"PENDING_GENERATION\",\n        \"protectionLevel\": \"string\",\n        \"algorithm\": \"string\",\n        \"createTime\": \"1960-06-12T09:24:23.350Z\",\n        \"generateTime\": \"1978-05-01T10:30:19.639Z\",\n        \"destroyTime\": \"1973-05-14T07:20:14.318Z\",\n        \"destroyEventTime\": \"2018-12-21T10:13:52.768Z\"\n      },\n      \"purpose\": \"ASYMMETRIC_DECRYPT\",\n      \"createTime\": \"1960-08-04T22:47:07.342Z\",\n      \"nextRotationTime\": \"1981-06-16T15:28:40.090Z\",\n      \"rotationPeriod\": \"string\",\n      \"versionTemplate\": {\n        \"protectionLevel\": \"EXTERNAL_VPC\",\n        \"algorithm\": \"string\"\n      },\n      \"destroyScheduledDuration\": \"string\",\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d296572b-b6a1-4d27-a13d-b2c01713a4fc",
+          "name": "Google Cloud KMS Create a crypto key",
+          "request": {
+            "name": "Google Cloud KMS Create a crypto key",
+            "description": {
+              "content": "Creates a new crypto key within a key ring.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "keyRings",
+                ":keyRingId",
+                "cryptoKeys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cryptoKeyId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "keyRingId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"primary\": {\n    \"name\": \"<string>\",\n    \"state\": \"<string>\",\n    \"protectionLevel\": \"<string>\",\n    \"algorithm\": \"<string>\",\n    \"createTime\": \"<dateTime>\",\n    \"generateTime\": \"<dateTime>\",\n    \"destroyTime\": \"<dateTime>\",\n    \"destroyEventTime\": \"<dateTime>\"\n  },\n  \"purpose\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"nextRotationTime\": \"<dateTime>\",\n  \"rotationPeriod\": \"<string>\",\n  \"versionTemplate\": {\n    \"protectionLevel\": \"<string>\",\n    \"algorithm\": \"<string>\"\n  },\n  \"destroyScheduledDuration\": \"<string>\",\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c379cf14-45b0-49b5-93a1-e7d75796dffe",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "keyRings",
+                    ":keyRingId",
+                    "cryptoKeys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cryptoKeyId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "keyRingId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"primary\": {\n    \"name\": \"string\",\n    \"state\": \"DISABLED\",\n    \"protectionLevel\": \"string\",\n    \"algorithm\": \"string\",\n    \"createTime\": \"1965-12-05T20:46:54.664Z\",\n    \"generateTime\": \"1967-05-28T22:09:14.964Z\",\n    \"destroyTime\": \"2009-02-27T01:09:34.812Z\",\n    \"destroyEventTime\": \"2001-02-11T10:21:43.550Z\"\n  },\n  \"purpose\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"nextRotationTime\": \"<dateTime>\",\n  \"rotationPeriod\": \"<string>\",\n  \"versionTemplate\": {\n    \"protectionLevel\": \"<string>\",\n    \"algorithm\": \"<string>\"\n  },\n  \"destroyScheduledDuration\": \"<string>\",\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"primary\": {\n    \"name\": \"string\",\n    \"state\": \"ENABLED\",\n    \"protectionLevel\": \"string\",\n    \"algorithm\": \"string\",\n    \"createTime\": \"1978-11-19T21:21:10.806Z\",\n    \"generateTime\": \"2023-11-13T13:58:04.960Z\",\n    \"destroyTime\": \"2001-09-05T06:18:48.518Z\",\n    \"destroyEventTime\": \"1990-08-05T15:38:24.061Z\"\n  },\n  \"purpose\": \"MAC\",\n  \"createTime\": \"1970-11-28T10:27:27.519Z\",\n  \"nextRotationTime\": \"1962-11-05T07:16:58.346Z\",\n  \"rotationPeriod\": \"string\",\n  \"versionTemplate\": {\n    \"protectionLevel\": \"EXTERNAL\",\n    \"algorithm\": \"string\"\n  },\n  \"destroyScheduledDuration\": \"string\",\n  \"labels\": {\n    \"key_0\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0c07223a-75c0-4389-8241-a5f1ce617445",
+          "name": "Google Cloud KMS Get a crypto key",
+          "request": {
+            "name": "Google Cloud KMS Get a crypto key",
+            "description": {
+              "content": "Retrieves a specific crypto key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "keyRings",
+                ":keyRingId",
+                "cryptoKeys",
+                ":cryptoKeyId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "keyRingId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cryptoKeyId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "13124e87-0e17-4194-8c7f-462734987b17",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "keyRings",
+                    ":keyRingId",
+                    "cryptoKeys",
+                    ":cryptoKeyId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "keyRingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cryptoKeyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"primary\": {\n    \"name\": \"string\",\n    \"state\": \"ENABLED\",\n    \"protectionLevel\": \"string\",\n    \"algorithm\": \"string\",\n    \"createTime\": \"1978-11-19T21:21:10.806Z\",\n    \"generateTime\": \"2023-11-13T13:58:04.960Z\",\n    \"destroyTime\": \"2001-09-05T06:18:48.518Z\",\n    \"destroyEventTime\": \"1990-08-05T15:38:24.061Z\"\n  },\n  \"purpose\": \"MAC\",\n  \"createTime\": \"1970-11-28T10:27:27.519Z\",\n  \"nextRotationTime\": \"1962-11-05T07:16:58.346Z\",\n  \"rotationPeriod\": \"string\",\n  \"versionTemplate\": {\n    \"protectionLevel\": \"EXTERNAL\",\n    \"algorithm\": \"string\"\n  },\n  \"destroyScheduledDuration\": \"string\",\n  \"labels\": {\n    \"key_0\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ffa965d8-448f-4e59-acc1-3745f3934adf",
+          "name": "Google Cloud KMS Update a crypto key",
+          "request": {
+            "name": "Google Cloud KMS Update a crypto key",
+            "description": {
+              "content": "Updates a crypto key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "keyRings",
+                ":keyRingId",
+                "cryptoKeys",
+                ":cryptoKeyId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "keyRingId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cryptoKeyId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"primary\": {\n    \"name\": \"<string>\",\n    \"state\": \"<string>\",\n    \"protectionLevel\": \"<string>\",\n    \"algorithm\": \"<string>\",\n    \"createTime\": \"<dateTime>\",\n    \"generateTime\": \"<dateTime>\",\n    \"destroyTime\": \"<dateTime>\",\n    \"destroyEventTime\": \"<dateTime>\"\n  },\n  \"purpose\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"nextRotationTime\": \"<dateTime>\",\n  \"rotationPeriod\": \"<string>\",\n  \"versionTemplate\": {\n    \"protectionLevel\": \"<string>\",\n    \"algorithm\": \"<string>\"\n  },\n  \"destroyScheduledDuration\": \"<string>\",\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "82449240-af2a-47d1-9884-4fcb4f1323c1",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "keyRings",
+                    ":keyRingId",
+                    "cryptoKeys",
+                    ":cryptoKeyId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "keyRingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cryptoKeyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"primary\": {\n    \"name\": \"string\",\n    \"state\": \"DISABLED\",\n    \"protectionLevel\": \"string\",\n    \"algorithm\": \"string\",\n    \"createTime\": \"1965-12-05T20:46:54.664Z\",\n    \"generateTime\": \"1967-05-28T22:09:14.964Z\",\n    \"destroyTime\": \"2009-02-27T01:09:34.812Z\",\n    \"destroyEventTime\": \"2001-02-11T10:21:43.550Z\"\n  },\n  \"purpose\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"nextRotationTime\": \"<dateTime>\",\n  \"rotationPeriod\": \"<string>\",\n  \"versionTemplate\": {\n    \"protectionLevel\": \"<string>\",\n    \"algorithm\": \"<string>\"\n  },\n  \"destroyScheduledDuration\": \"<string>\",\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"primary\": {\n    \"name\": \"string\",\n    \"state\": \"ENABLED\",\n    \"protectionLevel\": \"string\",\n    \"algorithm\": \"string\",\n    \"createTime\": \"1978-11-19T21:21:10.806Z\",\n    \"generateTime\": \"2023-11-13T13:58:04.960Z\",\n    \"destroyTime\": \"2001-09-05T06:18:48.518Z\",\n    \"destroyEventTime\": \"1990-08-05T15:38:24.061Z\"\n  },\n  \"purpose\": \"MAC\",\n  \"createTime\": \"1970-11-28T10:27:27.519Z\",\n  \"nextRotationTime\": \"1962-11-05T07:16:58.346Z\",\n  \"rotationPeriod\": \"string\",\n  \"versionTemplate\": {\n    \"protectionLevel\": \"EXTERNAL\",\n    \"algorithm\": \"string\"\n  },\n  \"destroyScheduledDuration\": \"string\",\n  \"labels\": {\n    \"key_0\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "63a23aa3-bb21-4d35-bbc0-904333097891",
+      "name": "Crypto Operations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c4e60dca-ba14-4afd-9d9c-3ac983740739",
+          "name": "Google Cloud KMS Encrypt data",
+          "request": {
+            "name": "Google Cloud KMS Encrypt data",
+            "description": {
+              "content": "Encrypts data using a crypto key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "keyRings",
+                ":keyRingId",
+                "cryptoKeys",
+                "{{cryptoKeyId}}:encrypt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "keyRingId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"plaintext\": \"<string>\",\n  \"additionalAuthenticatedData\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "08010c63-3800-490e-866d-11e356b1fccf",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "keyRings",
+                    ":keyRingId",
+                    "cryptoKeys",
+                    "{{cryptoKeyId}}:encrypt"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "keyRingId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"plaintext\": \"<string>\",\n  \"additionalAuthenticatedData\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"ciphertext\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "77fdc671-6157-4aeb-a7e4-5bcd21e2079a",
+          "name": "Google Cloud KMS Decrypt data",
+          "request": {
+            "name": "Google Cloud KMS Decrypt data",
+            "description": {
+              "content": "Decrypts data encrypted with a crypto key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "keyRings",
+                ":keyRingId",
+                "cryptoKeys",
+                "{{cryptoKeyId}}:decrypt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "keyRingId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ciphertext\": \"<string>\",\n  \"additionalAuthenticatedData\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5fb608d5-e9c5-4a97-81f1-cf35c493cc89",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "keyRings",
+                    ":keyRingId",
+                    "cryptoKeys",
+                    "{{cryptoKeyId}}:decrypt"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "keyRingId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ciphertext\": \"<string>\",\n  \"additionalAuthenticatedData\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"plaintext\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "00ac8263-f1b7-4d76-a30f-c07b454050e3",
+      "name": "Key Rings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bf7b93b5-f06d-429f-a765-a2f0db326c27",
+          "name": "Google Cloud KMS List key rings",
+          "request": {
+            "name": "Google Cloud KMS List key rings",
+            "description": {
+              "content": "Lists key rings in a project and location.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "keyRings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fe757d2c-ae58-42c8-8664-8c3bccb79051",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "keyRings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"keyRings\": [\n    {\n      \"name\": \"string\",\n      \"createTime\": \"1988-11-29T09:12:48.622Z\"\n    },\n    {\n      \"name\": \"string\",\n      \"createTime\": \"2014-11-17T23:53:36.881Z\"\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8336f67b-fc27-4aa3-8ffa-e0fb2b7a1ad8",
+          "name": "Google Cloud KMS Create a key ring",
+          "request": {
+            "name": "Google Cloud KMS Create a key ring",
+            "description": {
+              "content": "Creates a new key ring in a project and location.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "keyRings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "keyRingId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"createTime\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "69ae0aee-5af4-4571-9ba2-16e9db096aa0",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "keyRings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "keyRingId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"createTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"createTime\": \"1986-05-20T12:10:33.735Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "24f8408a-ef61-48d0-a9f8-be7940ee368b",
+          "name": "Google Cloud KMS Get a key ring",
+          "request": {
+            "name": "Google Cloud KMS Get a key ring",
+            "description": {
+              "content": "Retrieves a specific key ring.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "keyRings",
+                ":keyRingId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "keyRingId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f5fa679b-2852-42f5-91d5-902c23155b52",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "keyRings",
+                    ":keyRingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "keyRingId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"createTime\": \"1986-05-20T12:10:33.735Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cloudkms.googleapis.com/v1",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "cryptoKeyId"
+    }
+  ],
+  "info": {
+    "_postman_id": "41fb7ee8-396e-4f23-8427-d09b4cb72e8b",
+    "name": "Google Cloud KMS API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Cloud KMS API enables creating and managing cryptographic keys, key rings, and crypto key versions, and performing encrypt, decrypt, sign, and verify operations.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}

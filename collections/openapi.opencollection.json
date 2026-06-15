@@ -1,0 +1,336 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud KMS API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Key Rings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud KMS List key rings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists key rings in a project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud KMS Create a key ring",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "keyRingId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new key ring in a project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud KMS Get a key ring",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings/:keyRingId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "keyRingId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves a specific key ring."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Crypto Keys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud KMS List crypto keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings/:keyRingId/cryptoKeys",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "keyRingId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists crypto keys in a key ring."
+        },
+        {
+          "info": {
+            "name": "Google Cloud KMS Create a crypto key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings/:keyRingId/cryptoKeys",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "keyRingId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cryptoKeyId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new crypto key within a key ring."
+        },
+        {
+          "info": {
+            "name": "Google Cloud KMS Get a crypto key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings/:keyRingId/cryptoKeys/:cryptoKeyId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "keyRingId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cryptoKeyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves a specific crypto key."
+        },
+        {
+          "info": {
+            "name": "Google Cloud KMS Update a crypto key",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings/:keyRingId/cryptoKeys/:cryptoKeyId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "keyRingId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cryptoKeyId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a crypto key."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Crypto Operations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud KMS Encrypt data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings/:keyRingId/cryptoKeys/:cryptoKeyId:encrypt",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "keyRingId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cryptoKeyId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Encrypts data using a crypto key."
+        },
+        {
+          "info": {
+            "name": "Google Cloud KMS Decrypt data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings/:keyRingId/cryptoKeys/:cryptoKeyId:decrypt",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "keyRingId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cryptoKeyId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Decrypts data encrypted with a crypto key."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
