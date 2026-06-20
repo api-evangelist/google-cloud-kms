@@ -4,7 +4,7 @@ description: >-
   Google Cloud Key Management Service (KMS) allows you to create, import, and manage cryptographic keys and perform
   cryptographic operations in a central cloud service. It supports encryption, decryption, signing, and verification
   using symmetric and asymmetric keys for securing data and workloads.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-kms/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
