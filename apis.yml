@@ -43,6 +43,12 @@ apis:
       - type: JSONLDContext
         url: json-ld/context.jsonld
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-kms-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-kms-domain-security.yml
+  - type: Authentication
+    url: authentication/google-cloud-kms-authentication.yml
   - type: OAuthScopes
     url: scopes/google-cloud-kms-scopes.yml
   - type: GitHubOrganization
