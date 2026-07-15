@@ -1,0 +1,136 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 9
+  by_action_class:
+    connected: 4
+    acting: 5
+  by_consequence:
+    read: 4
+    write: 5
+  human_in_the_loop_required: 0
+operations:
+- path: /projects/{projectId}/locations/{location}/keyRings
+  method: get
+  operationId: listKeyRings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /projects/{projectId}/locations/{location}/keyRings
+  method: post
+  operationId: createKeyRing
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}
+  method: get
+  operationId: getKeyRing
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys
+  method: get
+  operationId: listCryptoKeys
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys
+  method: post
+  operationId: createCryptoKey
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}
+  method: get
+  operationId: getCryptoKey
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}
+  method: patch
+  operationId: updateCryptoKey
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}:encrypt
+  method: post
+  operationId: encrypt
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}:decrypt
+  method: post
+  operationId: decrypt
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required

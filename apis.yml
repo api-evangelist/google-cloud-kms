@@ -43,6 +43,8 @@ apis:
       - type: JSONLDContext
         url: json-ld/context.jsonld
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-cloud-kms-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-cloud-kms-vulnerability-disclosure.yml
   - type: DomainSecurity
