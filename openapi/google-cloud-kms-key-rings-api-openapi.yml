@@ -1,0 +1,141 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud KMS Crypto Keys Key Rings API
+  description: The Cloud KMS API enables creating and managing cryptographic keys, key rings, and crypto key versions, and performing encrypt, decrypt, sign, and verify operations.
+  version: 1.0.0
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/kms
+servers:
+- url: https://cloudkms.googleapis.com/v1
+  description: Google Cloud KMS Production
+tags:
+- name: Key Rings
+paths:
+  /projects/{projectId}/locations/{location}/keyRings:
+    get:
+      operationId: listKeyRings
+      summary: Google Cloud KMS List key rings
+      description: Lists key rings in a project and location.
+      tags:
+      - Key Rings
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  keyRings:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/KeyRing'
+                  nextPageToken:
+                    type: string
+    post:
+      operationId: createKeyRing
+      summary: Google Cloud KMS Create a key ring
+      description: Creates a new key ring in a project and location.
+      tags:
+      - Key Rings
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: keyRingId
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KeyRing'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeyRing'
+  /projects/{projectId}/locations/{location}/keyRings/{keyRingId}:
+    get:
+      operationId: getKeyRing
+      summary: Google Cloud KMS Get a key ring
+      description: Retrieves a specific key ring.
+      tags:
+      - Key Rings
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: keyRingId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeyRing'
+components:
+  schemas:
+    KeyRing:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Resource name of the key ring.
+        createTime:
+          type: string
+          format: date-time
+          description: Timestamp when the key ring was created.
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloudkms: Manage KMS resources
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud

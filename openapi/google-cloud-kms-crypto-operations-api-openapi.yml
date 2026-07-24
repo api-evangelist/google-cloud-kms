@@ -1,0 +1,129 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud KMS Crypto Keys Crypto Operations API
+  description: The Cloud KMS API enables creating and managing cryptographic keys, key rings, and crypto key versions, and performing encrypt, decrypt, sign, and verify operations.
+  version: 1.0.0
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/kms
+servers:
+- url: https://cloudkms.googleapis.com/v1
+  description: Google Cloud KMS Production
+tags:
+- name: Crypto Operations
+paths:
+  /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}:encrypt:
+    post:
+      operationId: encrypt
+      summary: Google Cloud KMS Encrypt data
+      description: Encrypts data using a crypto key.
+      tags:
+      - Crypto Operations
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: keyRingId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cryptoKeyId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                plaintext:
+                  type: string
+                  description: Base64-encoded plaintext to encrypt.
+                additionalAuthenticatedData:
+                  type: string
+                  description: Optional base64-encoded additional authenticated data.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  ciphertext:
+                    type: string
+  /projects/{projectId}/locations/{location}/keyRings/{keyRingId}/cryptoKeys/{cryptoKeyId}:decrypt:
+    post:
+      operationId: decrypt
+      summary: Google Cloud KMS Decrypt data
+      description: Decrypts data encrypted with a crypto key.
+      tags:
+      - Crypto Operations
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: keyRingId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cryptoKeyId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ciphertext:
+                  type: string
+                  description: Base64-encoded ciphertext to decrypt.
+                additionalAuthenticatedData:
+                  type: string
+                  description: Optional base64-encoded additional authenticated data.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  plaintext:
+                    type: string
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloudkms: Manage KMS resources
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud
