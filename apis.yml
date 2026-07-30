@@ -4,7 +4,20 @@ description: >-
   Google Cloud Key Management Service (KMS) allows you to create, import, and manage cryptographic keys and perform
   cryptographic operations in a central cloud service. It supports encryption, decryption, signing, and verification
   using symmetric and asymmetric keys for securing data and workloads.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-cloud-kms.png
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-kms/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -18,31 +31,69 @@ tags:
   - KMS
   - Security
 apis:
-  - name: Google Cloud KMS API
-    description: >-
-      The Cloud KMS API enables creating and managing cryptographic keys, key rings, and crypto key versions, and
-      performing encrypt, decrypt, sign, and verify operations.
-    humanURL: https://cloud.google.com/kms
-    baseURL: https://cloudkms.googleapis.com
-    tags:
-      - Cryptography
-      - Encryption
-      - Keys
-      - KMS
-    properties:
-      - type: Documentation
-        url: https://cloud.google.com/kms/docs/reference/rest
-      - type: OpenAPI
-        url: openapi/openapi.yml
-      - type: Authentication
-        url: https://cloud.google.com/kms/docs/iam
-      - type: GettingStarted
-        url: https://cloud.google.com/kms/docs/quickstart
-      - type: JSONSchema
-        url: json-schema/crypto-key.json
-      - type: JSONLDContext
-        url: json-ld/context.jsonld
+- aid: google-cloud-kms:google-cloud-kms-crypto-keys-api
+  name: Google Cloud KMS Crypto Keys API
+  description: The Crypto Keys API from Google Cloud KMS — 2 operation(s) for crypto keys.
+  humanURL: https://cloud.google.com/kms
+  baseURL: https://cloudkms.googleapis.com
+  tags:
+  - Crypto Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-kms-crypto-keys-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/kms/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/kms/docs/iam
+  - type: GettingStarted
+    url: https://cloud.google.com/kms/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/crypto-key.json
+  - type: JSONLDContext
+    url: json-ld/context.jsonld
+- aid: google-cloud-kms:google-cloud-kms-crypto-operations-api
+  name: Google Cloud KMS Crypto Operations API
+  description: The Crypto Operations API from Google Cloud KMS — 2 operation(s) for crypto operations.
+  humanURL: https://cloud.google.com/kms
+  baseURL: https://cloudkms.googleapis.com
+  tags:
+  - Crypto Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-kms-crypto-operations-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/kms/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/kms/docs/iam
+  - type: GettingStarted
+    url: https://cloud.google.com/kms/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/crypto-key.json
+  - type: JSONLDContext
+    url: json-ld/context.jsonld
+- aid: google-cloud-kms:google-cloud-kms-key-rings-api
+  name: Google Cloud KMS Key Rings API
+  description: The Key Rings API from Google Cloud KMS — 2 operation(s) for key rings.
+  humanURL: https://cloud.google.com/kms
+  baseURL: https://cloudkms.googleapis.com
+  tags:
+  - Key Rings
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-kms-key-rings-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/kms/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/kms/docs/iam
+  - type: GettingStarted
+    url: https://cloud.google.com/kms/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/crypto-key.json
+  - type: JSONLDContext
+    url: json-ld/context.jsonld
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-cloud-kms/overview
   - type: AgenticAccess
     url: agentic-access/google-cloud-kms-agentic-access.yml
   - type: VulnerabilityDisclosure
