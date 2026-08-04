@@ -1,0 +1,441 @@
+{
+  "info": {
+    "_postman_id": "f6436993-bc41-469e-b8d5-d5a86f4c2d7e",
+    "name": "Google Cloud KMS Crypto Keys Key Rings API",
+    "description": "The Cloud KMS API enables creating and managing cryptographic keys, key rings, and crypto key versions, and performing encrypt, decrypt, sign, and verify operations.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:47:51.000Z",
+    "updatedAt": "2026-07-28T01:47:51.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f6436993-bc41-469e-b8d5-d5a86f4c2d7e"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "keyRings",
+                      "item": [
+                        {
+                          "name": "{keyRingId}",
+                          "item": [
+                            {
+                              "name": "Google Cloud KMS Get a key ring",
+                              "id": "699bc8d6-44a0-4f6c-b7d8-aab746e3ecac",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/keyRings/:keyRingId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "keyRings",
+                                    ":keyRingId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "beea9eea-a990-49d5-a19a-14131df98bc1",
+                                      "key": "projectId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "defdc6d9-9062-436f-9935-9fafe668f3fc",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "62af4f3f-4f53-405b-82c2-c013e4712929",
+                                      "key": "keyRingId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Retrieves a specific key ring."
+                              },
+                              "response": [
+                                {
+                                  "id": "8114a6d4-7b02-420d-8acb-1e7e21b24f6f",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/keyRings/:keyRingId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "keyRings",
+                                        ":keyRingId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "projectId"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "keyRingId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"createTime\": \"<dateTime>\"\n}",
+                                  "createdAt": "2026-07-28T01:47:52.000Z",
+                                  "updatedAt": "2026-07-28T01:47:52.000Z",
+                                  "uid": "35240-8114a6d4-7b02-420d-8acb-1e7e21b24f6f"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:47:52.000Z",
+                              "updatedAt": "2026-07-28T01:47:52.000Z",
+                              "uid": "35240-699bc8d6-44a0-4f6c-b7d8-aab746e3ecac"
+                            }
+                          ],
+                          "id": "6796501c-f963-43e0-a244-27119de308d0",
+                          "createdAt": "2026-07-28T01:47:52.000Z",
+                          "updatedAt": "2026-07-28T01:47:52.000Z",
+                          "uid": "35240-6796501c-f963-43e0-a244-27119de308d0"
+                        },
+                        {
+                          "name": "Google Cloud KMS List key rings",
+                          "id": "b64a563b-454d-4dfa-8be2-23641306c8ec",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/keyRings?pageSize=<integer>&pageToken=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "keyRings"
+                              ],
+                              "query": [
+                                {
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "c9003342-b64f-429b-89c5-4d84648fb612",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "674a349b-64d7-4955-9259-01ab577b7397",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Lists key rings in a project and location."
+                          },
+                          "response": [
+                            {
+                              "id": "11d62e68-4a6d-403b-a779-4d5322512cdf",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/keyRings?pageSize=<integer>&pageToken=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "keyRings"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "pageSize",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "key": "pageToken",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"keyRings\": [\n    {\n      \"name\": \"<string>\",\n      \"createTime\": \"<dateTime>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"createTime\": \"<dateTime>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:47:52.000Z",
+                              "updatedAt": "2026-07-28T01:47:52.000Z",
+                              "uid": "35240-11d62e68-4a6d-403b-a779-4d5322512cdf"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:47:52.000Z",
+                          "updatedAt": "2026-07-28T01:47:52.000Z",
+                          "uid": "35240-b64a563b-454d-4dfa-8be2-23641306c8ec"
+                        },
+                        {
+                          "name": "Google Cloud KMS Create a key ring",
+                          "id": "56551597-6147-4084-b312-d12c7e46810f",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"createTime\": \"<dateTime>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/keyRings?keyRingId=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "keyRings"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "keyRingId",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "2e1d8470-78a3-49d7-9268-4b91e39b2fa5",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "2ebc9479-a433-4777-994e-6f8a61e71612",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Creates a new key ring in a project and location."
+                          },
+                          "response": [
+                            {
+                              "id": "e49da22a-68cb-4058-b3ea-8a6dde35137e",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"createTime\": \"<dateTime>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/keyRings?keyRingId=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "keyRings"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "(Required) ",
+                                      "key": "keyRingId",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"name\": \"<string>\",\n  \"createTime\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T01:47:52.000Z",
+                              "updatedAt": "2026-07-28T01:47:52.000Z",
+                              "uid": "35240-e49da22a-68cb-4058-b3ea-8a6dde35137e"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:47:52.000Z",
+                          "updatedAt": "2026-07-28T01:47:52.000Z",
+                          "uid": "35240-56551597-6147-4084-b312-d12c7e46810f"
+                        }
+                      ],
+                      "id": "0d7f9b40-5640-42b3-9961-d262c6ab1d14",
+                      "createdAt": "2026-07-28T01:47:52.000Z",
+                      "updatedAt": "2026-07-28T01:47:52.000Z",
+                      "uid": "35240-0d7f9b40-5640-42b3-9961-d262c6ab1d14"
+                    }
+                  ],
+                  "id": "9a043752-cee1-4b2a-be37-0b5cebf3e3c4",
+                  "createdAt": "2026-07-28T01:47:52.000Z",
+                  "updatedAt": "2026-07-28T01:47:52.000Z",
+                  "uid": "35240-9a043752-cee1-4b2a-be37-0b5cebf3e3c4"
+                }
+              ],
+              "id": "bb4f64d9-f2af-4527-bd2c-dd62d5e19d65",
+              "createdAt": "2026-07-28T01:47:52.000Z",
+              "updatedAt": "2026-07-28T01:47:52.000Z",
+              "uid": "35240-bb4f64d9-f2af-4527-bd2c-dd62d5e19d65"
+            }
+          ],
+          "id": "56c4623c-36ce-48e8-a467-0298850edd63",
+          "createdAt": "2026-07-28T01:47:52.000Z",
+          "updatedAt": "2026-07-28T01:47:52.000Z",
+          "uid": "35240-56c4623c-36ce-48e8-a467-0298850edd63"
+        }
+      ],
+      "id": "5ff398e0-1c4c-4ae0-950e-41f6ac41d64f",
+      "createdAt": "2026-07-28T01:47:52.000Z",
+      "updatedAt": "2026-07-28T01:47:52.000Z",
+      "uid": "35240-5ff398e0-1c4c-4ae0-950e-41f6ac41d64f"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://cloudkms.googleapis.com/v1"
+    }
+  ]
+}

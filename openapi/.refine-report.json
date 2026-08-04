@@ -1,0 +1,18 @@
+{
+  "provider": "google-cloud-kms",
+  "sources": [
+    "google-cloud-kms-crypto-keys-api-openapi.yml",
+    "google-cloud-kms-crypto-operations-api-openapi.yml",
+    "google-cloud-kms-key-rings-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-kms-crypto-keys-api-openapi.yml",
+    "google-cloud-kms-crypto-operations-api-openapi.yml",
+    "google-cloud-kms-key-rings-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

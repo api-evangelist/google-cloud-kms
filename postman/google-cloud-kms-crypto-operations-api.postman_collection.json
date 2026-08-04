@@ -1,0 +1,387 @@
+{
+  "info": {
+    "_postman_id": "65f85ae1-0a6e-4b4e-98c2-cf29e3ed0f3e",
+    "name": "Google Cloud KMS Crypto Keys Crypto Operations API",
+    "description": "The Cloud KMS API enables creating and managing cryptographic keys, key rings, and crypto key versions, and performing encrypt, decrypt, sign, and verify operations.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:47:46.000Z",
+    "updatedAt": "2026-07-28T01:47:46.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-65f85ae1-0a6e-4b4e-98c2-cf29e3ed0f3e"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "keyRings",
+                      "item": [
+                        {
+                          "name": "{keyRingId}",
+                          "item": [
+                            {
+                              "name": "cryptoKeys",
+                              "item": [
+                                {
+                                  "name": "{cryptoKeyId}:encrypt",
+                                  "item": [
+                                    {
+                                      "name": "Google Cloud KMS Encrypt data",
+                                      "id": "5fd7310e-5a69-401d-b952-3f72e333d4d4",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"plaintext\": \"<string>\",\n  \"additionalAuthenticatedData\": \"<string>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:projectId/locations/:location/keyRings/:keyRingId/cryptoKeys/{{cryptoKeyId}}:encrypt",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":projectId",
+                                            "locations",
+                                            ":location",
+                                            "keyRings",
+                                            ":keyRingId",
+                                            "cryptoKeys",
+                                            "{{cryptoKeyId}}:encrypt"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "94d08d8a-1ee6-481b-9358-3e77735a6129",
+                                              "key": "projectId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "24d8719e-a7c9-4b88-8081-3eba0a362449",
+                                              "key": "location",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "8d44d398-97b4-46bb-9567-866598bad4bd",
+                                              "key": "keyRingId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            }
+                                          ]
+                                        },
+                                        "description": "Encrypts data using a crypto key."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "28284a4f-1126-4f4a-9a89-05ae5bcb2f1c",
+                                          "name": "Successful response",
+                                          "originalRequest": {
+                                            "method": "POST",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"plaintext\": \"<string>\",\n  \"additionalAuthenticatedData\": \"<string>\"\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/keyRings/:keyRingId/cryptoKeys/{{cryptoKeyId}}:encrypt",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "projects",
+                                                ":projectId",
+                                                "locations",
+                                                ":location",
+                                                "keyRings",
+                                                ":keyRingId",
+                                                "cryptoKeys",
+                                                "{{cryptoKeyId}}:encrypt"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "projectId"
+                                                },
+                                                {
+                                                  "key": "location"
+                                                },
+                                                {
+                                                  "key": "keyRingId"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"name\": \"<string>\",\n  \"ciphertext\": \"<string>\"\n}",
+                                          "createdAt": "2026-07-28T01:47:47.000Z",
+                                          "updatedAt": "2026-07-28T01:47:47.000Z",
+                                          "uid": "35240-28284a4f-1126-4f4a-9a89-05ae5bcb2f1c"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T01:47:47.000Z",
+                                      "updatedAt": "2026-07-28T01:47:47.000Z",
+                                      "uid": "35240-5fd7310e-5a69-401d-b952-3f72e333d4d4"
+                                    }
+                                  ],
+                                  "id": "8a155af5-4bd9-45bd-b713-47fe9a8fab4f",
+                                  "createdAt": "2026-07-28T01:47:46.000Z",
+                                  "updatedAt": "2026-07-28T01:47:46.000Z",
+                                  "uid": "35240-8a155af5-4bd9-45bd-b713-47fe9a8fab4f"
+                                },
+                                {
+                                  "name": "{cryptoKeyId}:decrypt",
+                                  "item": [
+                                    {
+                                      "name": "Google Cloud KMS Decrypt data",
+                                      "id": "ddef024f-fd6f-4a07-843a-b6d322611585",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"ciphertext\": \"<string>\",\n  \"additionalAuthenticatedData\": \"<string>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:projectId/locations/:location/keyRings/:keyRingId/cryptoKeys/{{cryptoKeyId}}:decrypt",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":projectId",
+                                            "locations",
+                                            ":location",
+                                            "keyRings",
+                                            ":keyRingId",
+                                            "cryptoKeys",
+                                            "{{cryptoKeyId}}:decrypt"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "cd6d98e5-cb4b-41e4-bc15-6f4ecc865ba8",
+                                              "key": "projectId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "c7dafbce-35b3-4887-a177-17cc5a8cbe63",
+                                              "key": "location",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "3551390a-d4b5-4f69-ad5d-a3a4e2b11c28",
+                                              "key": "keyRingId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            }
+                                          ]
+                                        },
+                                        "description": "Decrypts data encrypted with a crypto key."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "6be44f0c-1fc7-4a91-a557-2725e813e01f",
+                                          "name": "Successful response",
+                                          "originalRequest": {
+                                            "method": "POST",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"ciphertext\": \"<string>\",\n  \"additionalAuthenticatedData\": \"<string>\"\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/keyRings/:keyRingId/cryptoKeys/{{cryptoKeyId}}:decrypt",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "projects",
+                                                ":projectId",
+                                                "locations",
+                                                ":location",
+                                                "keyRings",
+                                                ":keyRingId",
+                                                "cryptoKeys",
+                                                "{{cryptoKeyId}}:decrypt"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "projectId"
+                                                },
+                                                {
+                                                  "key": "location"
+                                                },
+                                                {
+                                                  "key": "keyRingId"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"plaintext\": \"<string>\"\n}",
+                                          "createdAt": "2026-07-28T01:47:47.000Z",
+                                          "updatedAt": "2026-07-28T01:47:47.000Z",
+                                          "uid": "35240-6be44f0c-1fc7-4a91-a557-2725e813e01f"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T01:47:47.000Z",
+                                      "updatedAt": "2026-07-28T01:47:47.000Z",
+                                      "uid": "35240-ddef024f-fd6f-4a07-843a-b6d322611585"
+                                    }
+                                  ],
+                                  "id": "ad3fc01a-12c7-4f32-aca1-9d1ac17502a3",
+                                  "createdAt": "2026-07-28T01:47:46.000Z",
+                                  "updatedAt": "2026-07-28T01:47:46.000Z",
+                                  "uid": "35240-ad3fc01a-12c7-4f32-aca1-9d1ac17502a3"
+                                }
+                              ],
+                              "id": "c976c7a3-b11d-4c86-8be1-880f4491987e",
+                              "createdAt": "2026-07-28T01:47:46.000Z",
+                              "updatedAt": "2026-07-28T01:47:46.000Z",
+                              "uid": "35240-c976c7a3-b11d-4c86-8be1-880f4491987e"
+                            }
+                          ],
+                          "id": "4e06357f-1812-41c9-8f56-fccc491c4888",
+                          "createdAt": "2026-07-28T01:47:46.000Z",
+                          "updatedAt": "2026-07-28T01:47:46.000Z",
+                          "uid": "35240-4e06357f-1812-41c9-8f56-fccc491c4888"
+                        }
+                      ],
+                      "id": "590e068c-b99d-452b-a0a1-f2222b02732a",
+                      "createdAt": "2026-07-28T01:47:46.000Z",
+                      "updatedAt": "2026-07-28T01:47:46.000Z",
+                      "uid": "35240-590e068c-b99d-452b-a0a1-f2222b02732a"
+                    }
+                  ],
+                  "id": "5003ff54-c0a9-418c-9a46-0646314ab8af",
+                  "createdAt": "2026-07-28T01:47:46.000Z",
+                  "updatedAt": "2026-07-28T01:47:46.000Z",
+                  "uid": "35240-5003ff54-c0a9-418c-9a46-0646314ab8af"
+                }
+              ],
+              "id": "578b0565-ccaa-4327-bad3-50a9c780cd81",
+              "createdAt": "2026-07-28T01:47:46.000Z",
+              "updatedAt": "2026-07-28T01:47:46.000Z",
+              "uid": "35240-578b0565-ccaa-4327-bad3-50a9c780cd81"
+            }
+          ],
+          "id": "bd456e20-f389-4703-9bfb-ca02910b3f61",
+          "createdAt": "2026-07-28T01:47:46.000Z",
+          "updatedAt": "2026-07-28T01:47:46.000Z",
+          "uid": "35240-bd456e20-f389-4703-9bfb-ca02910b3f61"
+        }
+      ],
+      "id": "405cd3b0-ef6f-4afa-8847-f4dd717fbdeb",
+      "createdAt": "2026-07-28T01:47:46.000Z",
+      "updatedAt": "2026-07-28T01:47:46.000Z",
+      "uid": "35240-405cd3b0-ef6f-4afa-8847-f4dd717fbdeb"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://cloudkms.googleapis.com/v1"
+    },
+    {
+      "key": "cryptoKeyId",
+      "value": "<string>"
+    }
+  ]
+}
