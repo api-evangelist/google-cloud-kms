@@ -1,0 +1,153 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud KMS Crypto Keys API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Crypto Keys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud KMS List crypto keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings/:keyRingId/cryptoKeys",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "keyRingId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists crypto keys in a key ring."
+        },
+        {
+          "info": {
+            "name": "Google Cloud KMS Create a crypto key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings/:keyRingId/cryptoKeys",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "keyRingId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cryptoKeyId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new crypto key within a key ring."
+        },
+        {
+          "info": {
+            "name": "Google Cloud KMS Get a crypto key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings/:keyRingId/cryptoKeys/:cryptoKeyId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "keyRingId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cryptoKeyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves a specific crypto key."
+        },
+        {
+          "info": {
+            "name": "Google Cloud KMS Update a crypto key",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings/:keyRingId/cryptoKeys/:cryptoKeyId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "keyRingId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cryptoKeyId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a crypto key."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

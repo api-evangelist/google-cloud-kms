@@ -1,0 +1,92 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud KMS Crypto Keys Crypto Operations API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Crypto Operations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud KMS Encrypt data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings/:keyRingId/cryptoKeys/:cryptoKeyId:encrypt",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "keyRingId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cryptoKeyId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Encrypts data using a crypto key."
+        },
+        {
+          "info": {
+            "name": "Google Cloud KMS Decrypt data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings/:keyRingId/cryptoKeys/:cryptoKeyId:decrypt",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "keyRingId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cryptoKeyId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Decrypts data encrypted with a crypto key."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

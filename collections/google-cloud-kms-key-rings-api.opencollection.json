@@ -1,0 +1,111 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud KMS Crypto Keys Key Rings API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Key Rings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud KMS List key rings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists key rings in a project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud KMS Create a key ring",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "keyRingId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new key ring in a project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud KMS Get a key ring",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudkms.googleapis.com/v1/projects/:projectId/locations/:location/keyRings/:keyRingId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "keyRingId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves a specific key ring."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
