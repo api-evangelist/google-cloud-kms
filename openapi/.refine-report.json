@@ -1,9 +1,7 @@
 {
   "provider": "google-cloud-kms",
   "sources": [
-    "google-cloud-kms-crypto-keys-api-openapi.yml",
-    "google-cloud-kms-crypto-operations-api-openapi.yml",
-    "google-cloud-kms-key-rings-api-openapi.yml"
+    "_original/openapi.yml"
   ],
   "outputs": [
     "google-cloud-kms-crypto-keys-api-openapi.yml",
@@ -14,10 +12,13 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "google-cloud-kms-crypto-keys-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-cloud-kms-crypto-operations-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-cloud-kms-key-rings-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "google-cloud-kms-crypto-keys-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-cloud-kms-crypto-operations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-cloud-kms-key-rings-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

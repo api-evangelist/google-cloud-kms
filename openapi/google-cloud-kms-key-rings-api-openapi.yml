@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud KMS Crypto Keys Key Rings API
+  title: Google Cloud KMS Key Rings API
   description: The Cloud KMS API enables creating and managing cryptographic keys, key rings, and crypto key versions, and performing encrypt, decrypt, sign, and verify operations.
   version: 1.0.0
   contact:
