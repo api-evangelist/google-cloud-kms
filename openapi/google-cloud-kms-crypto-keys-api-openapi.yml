@@ -166,6 +166,41 @@ paths:
                 $ref: '#/components/schemas/CryptoKey'
 components:
   schemas:
+    CryptoKeyVersion:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Resource name of the crypto key version.
+        state:
+          type: string
+          enum:
+          - CRYPTO_KEY_VERSION_STATE_UNSPECIFIED
+          - PENDING_GENERATION
+          - ENABLED
+          - DISABLED
+          - DESTROYED
+          - DESTROY_SCHEDULED
+          - PENDING_IMPORT
+          - IMPORT_FAILED
+        protectionLevel:
+          type: string
+          description: Protection level of the key version.
+        algorithm:
+          type: string
+          description: Algorithm of the key version.
+        createTime:
+          type: string
+          format: date-time
+        generateTime:
+          type: string
+          format: date-time
+        destroyTime:
+          type: string
+          format: date-time
+        destroyEventTime:
+          type: string
+          format: date-time
     CryptoKey:
       type: object
       properties:
@@ -214,41 +249,6 @@ components:
           type: object
           additionalProperties:
             type: string
-    CryptoKeyVersion:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Resource name of the crypto key version.
-        state:
-          type: string
-          enum:
-          - CRYPTO_KEY_VERSION_STATE_UNSPECIFIED
-          - PENDING_GENERATION
-          - ENABLED
-          - DISABLED
-          - DESTROYED
-          - DESTROY_SCHEDULED
-          - PENDING_IMPORT
-          - IMPORT_FAILED
-        protectionLevel:
-          type: string
-          description: Protection level of the key version.
-        algorithm:
-          type: string
-          description: Algorithm of the key version.
-        createTime:
-          type: string
-          format: date-time
-        generateTime:
-          type: string
-          format: date-time
-        destroyTime:
-          type: string
-          format: date-time
-        destroyEventTime:
-          type: string
-          format: date-time
   securitySchemes:
     oauth2:
       type: oauth2
