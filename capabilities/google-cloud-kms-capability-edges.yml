@@ -1,0 +1,45 @@
+slug: google-cloud-kms
+provider: Google Cloud KMS
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Crypto Keys
+  spec_file: google-cloud-kms-crypto-keys-api-openapi.yml
+  capability_id: BC-620
+  capability_id_l1: BC-620
+  capability_name: Cybersecurity Management
+  confidence: 0.78
+  evidence: '"Create a crypto key", "Update a crypto key", schemas "CryptoKey", "CryptoKeyVersion"'
+  reason: Cryptographic key lifecycle management is a security control capability, so BC-620 Cybersecurity
+    Management is the right L1. No L2 is a clean fit (it is neither identity provisioning nor security
+    architecture design), so the L2 is left null rather than forced.
+- tag: Crypto Operations
+  spec_file: google-cloud-kms-crypto-operations-api-openapi.yml
+  capability_id: BC-620
+  capability_id_l1: BC-620
+  capability_name: Cybersecurity Management
+  confidence: 0.75
+  evidence: POST .../cryptoKeys/{cryptoKeyId}:encrypt  encrypt  Google Cloud KMS Encrypt data
+  reason: Operations perform cryptographic encrypt/decrypt with managed keys — a security control capability.
+    Maps to Cybersecurity Management at L1; no listed L2 cleanly covers cryptographic key operations,
+    so L2 is left null.
+- tag: Key Rings
+  spec_file: google-cloud-kms-key-rings-api-openapi.yml
+  capability_id: BC-620
+  capability_id_l1: BC-620
+  capability_name: Cybersecurity Management
+  confidence: 0.7
+  evidence: POST /projects/{projectId}/locations/{location}/keyRings  createKeyRing  Google Cloud KMS
+    Create a key ring
+  reason: Creating and listing key rings is cryptographic key-material governance, part of Cybersecurity
+    Management. No L2 in the list specifically covers key management, so only L1 is asserted.

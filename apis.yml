@@ -104,6 +104,9 @@ apis:
   - type: JSONLDContext
     url: json-ld/context.jsonld
 common:
+  - type: CapabilityMap
+    url: capabilities/google-cloud-kms-capability-edges.yml
+    name: Google Cloud KMS Business Capability Map
   - type: Website
     url: https://www.google.com/
   - type: PostmanWorkspace
